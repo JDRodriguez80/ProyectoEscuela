@@ -1,0 +1,65 @@
+erDiagram
+    Alumno}|--||Grupo:Tiene
+	Profesor||--||Grupo:Petenece
+	Alumno |o -- o| Discapacidad:Padece
+	Alumno || -- |{AlumnoPadres: pertenece
+	Padres || -- |{AlumnoPadres: pertenece
+	Alumno |o -- || TipoSanguineo:Pertenece
+	Profesor|| -- ||TipoPlaza:Posee
+	
+	Alumno{
+		int id PK
+		string nombre
+		string primerApellido
+		string segundoApellido
+		date FDN
+		string CURP
+		string talla
+		string peso
+		int tipoSanguineo FK
+		int discapacidad FK
+		string direccion 
+		string telefono
+		blob fotografia
+		
+	}
+	Profesor{
+		int id PK
+		string nombreCompleto
+		date FDN
+		string CURP
+		string RFC
+		string direccion 
+		string telefono
+		blob fotografia
+		int tipoPlaza
+	}
+	Grupo{
+		int id PK
+		string nombre
+	}
+	Padres{
+		int id PK
+		string nombreCompleto
+		string CURP
+		String direccion
+		String telefono
+	}
+	Discapacidad{
+		int id PK 
+		string nombre
+	}
+	AlumnoPadres{
+	int idAlumnoPadre PK
+	int idAlumno FK
+	int idPadre FK
+	}
+	TipoSanguineo{
+	int id PK
+	string Nombre 
+	}
+	TipoPlaza{
+		int id PK
+		string nombre
+	}
+            
